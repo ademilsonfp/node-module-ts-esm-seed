@@ -22,6 +22,6 @@ Simple project seed for a Node.js module using TypeScript.
 
 - local imports must have the complete relative path to files including the
   extension `.js` (it is a Node.js 14 requirement)
-- code coverage reports is not working probably because of the above issue and
-  are disabled, causing Node Tap to not run in watch mode
+- code coverage reports are not working probably because of the above issue and
+  they are also disabled, causing Node Tap to not run in watch mode
 - tested only with Node.js 14

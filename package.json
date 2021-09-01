@@ -15,7 +15,7 @@
     "clean:docs": "rm -r docs 2> /dev/null || true",
     "build": "yarn clean && tsc --pretty && yarn build:schema && typedoc",
     "build:lib": "yarn clean:lib && tsc --pretty",
-    "build:schema": "ts-json-schema-generator -p src/payload/**/*.ts -o schema.json",
+    "build:schema": "ts-json-schema-generator --no-ref-encode -p src/payload/**/*.ts -o schema.json",
     "build:docs": "yarn clean:docs && typedoc"
   },
   "devDependencies": {
