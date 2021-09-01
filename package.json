@@ -1,0 +1,33 @@
+{
+  "name": "node-module-ts-esm-seed",
+  "version": "0.0.1",
+  "description": "Simple project seed for a Node.js module",
+  "type": "module",
+  "module": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "author": "",
+  "license": "UNLICENSED",
+  "scripts": {
+    "test": "tap",
+    "clean": "yarn clean:lib && yarn clean:schema && yarn clean:docs",
+    "clean:lib": "rm -r lib 2> /dev/null || true",
+    "clean:schema": "rm schema.json 2> /dev/null || true",
+    "clean:docs": "rm -r docs 2> /dev/null || true",
+    "build": "yarn clean && tsc --pretty && yarn build:schema && typedoc",
+    "build:lib": "yarn clean:lib && tsc --pretty",
+    "build:schema": "ts-json-schema-generator -p src/payload/**/*.ts -o schema.json",
+    "build:docs": "yarn clean:docs && typedoc"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.10",
+    "@types/tap": "~15.0.5",
+    "tap": "~15.0.9",
+    "ts-json-schema-generator": "^0.95.0",
+    "ts-node": "~10.2.1",
+    "typedoc": "~0.21.0",
+    "typescript": "~4.3.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

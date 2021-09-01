@@ -1,0 +1,9 @@
+
+ts: true,
+reporter: list
+browser: false
+coverage: false
+
+node-arg:
+  - --no-warnings
+  - --loader=ts-node/esm
